@@ -1944,11 +1944,22 @@ function CGame(a, d, b) {
         G = new CBatter(F, a);
         
         d = s_oSpriteLibrary.getSprite("pole_0");
-        pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        pole0 = createBitmap(d);
+        pole0.x = CANVAS_WIDTH_HALF;
+        pole0.y = CANVAS_HEIGHT - 193;
+        pole0.regX = .5 * d.width;
+        pole0.regY = .5 * d.height;
+        f.addChild(pole0);
         
          d = s_oSpriteLibrary.getSprite("pole_2");
-        pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
-        pole2.visible = false;
+        pole2 = createBitmap(d);
+        pole2.x = CANVAS_WIDTH_HALF;
+        pole2.y = CANVAS_HEIGHT - 193;
+        pole2.regX = .5 * d.width;
+        pole2.regY = .5 * d.height;
+        f.addChild(pole2);
+        pole2.alpha = 0;
+        
 
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
@@ -2038,8 +2049,8 @@ function CGame(a, d, b) {
             l = !0;
             playSound("crowd_ohhh", 1, !1);
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
-            pole2.visible = true;
-            pole0.visible = false;
+            pole2.alpha = 1;
+            pole0.alpha = 0;
             r.setVisible(!1);
             y--;
             A.refreshLivesText(y)
