@@ -1,5 +1,3 @@
-var pole0;
-var pole2; 
 (function() {
     function a(a) {
         a = String(a);
@@ -1222,9 +1220,7 @@ TEXT_SHARE_MSG2 = " points</strong>!<br><br>Share your score with your friends!"
 TEXT_SHARE_SHARE1 = "My score is ";
 TEXT_SHARE_SHARE2 = " points! Can you do better?";
 
-
-    
-    function CPreloader() {
+function CPreloader() {
     var a, d, b, c, e, f, h, m, n, k;
     this._init = function() {
         s_oSpriteLibrary.init(this._onImagesLoaded, this._onAllImagesLoaded, this);
@@ -1444,7 +1440,6 @@ function CMain(a) {
         s_oSpriteLibrary.addSprite("but_continue", "./sprites/but_continue.png");
         s_oSpriteLibrary.addSprite("pole_0", "./sprites/pole_0.png");
         s_oSpriteLibrary.addSprite("pole_1", "./sprites/pole_1.png");
-        s_oSpriteLibrary.addSprite("pole_2", "./sprites/pole_2.png");
         s_oSpriteLibrary.addSprite("but_pause", "./sprites/but_pause.png");
         s_oSpriteLibrary.addSprite("but_yes", "./sprites/but_yes.png");
         s_oSpriteLibrary.addSprite("but_no", "./sprites/but_no.png");
@@ -1906,7 +1901,6 @@ function CMenu() {
     this._init()
 }
 var s_oMenu = null;
-   
 
 function CGame(a, d, b) {
     function c(a) {
@@ -1948,25 +1942,12 @@ function CGame(a, d, b) {
         y = LIVES;
         G = new CBatter(F, a);
         d = s_oSpriteLibrary.getSprite("pole_0");
-        pole0 = createBitmap(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
-        c.addChild(pole0);
-        
-        d = s_oSpriteLibrary.getSprite("pole_2");
-        
-       pole2 = createBitmap(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
-        c.addChild(pole2);
-        
-        pole2.visible = false;
-        pole2.alpha = 0;
-        
-
-       
+        new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
         A.createHelpPanel()
     };
     this.launchCountdown = function() {
-        
         var a = createBitmap(s_oSpriteLibrary.getSprite("3"));
         a.x = CANVAS_WIDTH / 2;
         a.y = CANVAS_HEIGHT / 2;
@@ -2050,10 +2031,6 @@ function CGame(a, d, b) {
             l = !0;
             playSound("crowd_ohhh", 1, !1);
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
-        pole0.visible = false;
-        pole0.alpha = 0;
-        pole2.visible = true;
-        pole2.alpha = 1;
             r.setVisible(!1);
             y--;
             A.refreshLivesText(y)
