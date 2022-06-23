@@ -1953,7 +1953,7 @@ function CGame(a, d, b) {
         d = s_oSpriteLibrary.getSprite("pole_2");
         
         pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
-        
+        pole2.visible = false;
         
         
 
