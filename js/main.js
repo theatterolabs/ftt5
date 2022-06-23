@@ -1942,9 +1942,8 @@ function CGame(a, d, b) {
         this.ballResetPos();
         y = LIVES;
         G = new CBatter(F, a);
-        var d1 = s_oSpriteLibrary.getSprite("pole_0");
-        var e1 = createBitmap(d1);
-        addChild(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, e1, F);
+        var d1 = createBitmap(s_oSpriteLibrary.getSprite("pole_0"));
+        var e1 = s_oStage.addChild(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d1, F);
         
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
