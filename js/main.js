@@ -1188,7 +1188,7 @@ var CANVAS_WIDTH = 790,
     HIT_LEFT = 0,
     HIT_CENTER = 1,
     HIT_RIGHT = 2,
-    ENABLE_FULLSCREEN, ENABLE_CHECK_ORIENTATION;
+    ENABLE_FULLSCREEN, pole0, pole1, pole2, ENABLE_CHECK_ORIENTATION;
 TEXT_TEAM = "India;England;Australia;Bangladesh;South Africa;Sri Lanka".split(";");
 TEXT_GAMEOVER = "GAME OVER";
 TEXT_SCORE = "FINAL SCORE\n";
@@ -1440,6 +1440,7 @@ function CMain(a) {
         s_oSpriteLibrary.addSprite("but_continue", "./sprites/but_continue.png");
         s_oSpriteLibrary.addSprite("pole_0", "./sprites/pole_0.png");
         s_oSpriteLibrary.addSprite("pole_1", "./sprites/pole_1.png");
+        s_oSpriteLibrary.addSprite("pole_2", "./sprites/pole_2.png");
         s_oSpriteLibrary.addSprite("but_pause", "./sprites/but_pause.png");
         s_oSpriteLibrary.addSprite("but_yes", "./sprites/but_yes.png");
         s_oSpriteLibrary.addSprite("but_no", "./sprites/but_no.png");
@@ -1920,6 +1921,9 @@ function CGame(a, d, b) {
         l = !1,
         w = !0,
         z = !1,
+        pole0,
+        pole1,
+        pole2,
         E, A, M = null,
         F, G, H, r;
     this._init = function(a, b) {
@@ -1933,7 +1937,7 @@ function CGame(a, d, b) {
         A = new CInterface;
         H = new CBowler(F, b);
         d = s_oSpriteLibrary.getSprite("pole_1");
-        new CPole(CANVAS_WIDTH_HALF - 8, CANVAS_HEIGHT - 812, d, F);
+        pole1 = new CPole(CANVAS_WIDTH_HALF - 8, CANVAS_HEIGHT - 812, d, F);
         d = s_oSpriteLibrary.getSprite("ball_target");
         r = new CBallTarget(-100, -100, d, F);
         r.setVisible(!1);
@@ -1942,7 +1946,10 @@ function CGame(a, d, b) {
         y = LIVES;
         G = new CBatter(F, a);
         d = s_oSpriteLibrary.getSprite("pole_0");
-        new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        d = s_oSpriteLibrary.getSprite("pole_2");
+        pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        pole2.setVisible(!1);
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
         A.createHelpPanel()
@@ -2030,6 +2037,10 @@ function CGame(a, d, b) {
             x = !1;
             l = !0;
             playSound("crowd_ohhh", 1, !1);
+            F = new createjs.Container;
+            
+            pole2.setVisible(!0);
+            pole0.setVisible(!1);
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
             r.setVisible(!1);
             y--;
@@ -2039,6 +2050,8 @@ function CGame(a, d, b) {
         e = 0;
         p && s_oGame._strike();
         s_oGame.changeStateTarget(!1);
+        pole2.setVisible(!1);
+            pole0.setVisible(!0);
         x = !0;
         z = !1;
         A.setHitAreaVisible(!1)
