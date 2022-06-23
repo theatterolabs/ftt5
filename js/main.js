@@ -1946,6 +1946,10 @@ function CGame(a, d, b) {
         
         this.pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         
+         d = s_oSpriteLibrary.getSprite("pole_2");
+        this.pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+          this.pole2.visible = false;
+
        
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
@@ -2034,12 +2038,8 @@ function CGame(a, d, b) {
             x = !1;
             l = !0;
             playSound("crowd_ohhh", 1, !1);
-            F = new createjs.Container;
-             d = s_oSpriteLibrary.getSprite("pole_2");
-        this.pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
-
-            this.pole2.setVisible(!0);
-            this.pole0.setVisible(!1);
+            this.pole2.visible = false;
+            this.pole0.visible = true;
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
             r.setVisible(!1);
             y--;
@@ -2049,8 +2049,8 @@ function CGame(a, d, b) {
         e = 0;
         p && s_oGame._strike();
         s_oGame.changeStateTarget(!1);
-        this.pole2.setVisible(!1);
-            this.pole0.setVisible(!0);
+        this.pole2.visible = true;
+            this.pole0.visible = false;
         x = !0;
         z = !1;
         A.setHitAreaVisible(!1)
