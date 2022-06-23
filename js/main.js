@@ -1943,7 +1943,7 @@ function CGame(a, d, b) {
         y = LIVES;
         G = new CBatter(F, a);
         d = s_oSpriteLibrary.getSprite("pole_0");
-        var window.pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        window.pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         
        
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
@@ -2035,7 +2035,7 @@ function CGame(a, d, b) {
             playSound("crowd_ohhh", 1, !1);
             F = new createjs.Container;
              d = s_oSpriteLibrary.getSprite("pole_2");
-        var window.pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        window.pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
 
             pole2.setVisible(!0);
             pole0.setVisible(!1);
