@@ -1943,7 +1943,7 @@ function CGame(a, d, b) {
         y = LIVES;
         G = new CBatter(F, a);
         var d1 = createBitmap(s_oSpriteLibrary.getSprite("pole_0"));
-        var e1 = s_oStage.addChild(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d1, F);
+        var e1 = s_oStage.addChild(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d1);
         
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
