@@ -1220,7 +1220,10 @@ TEXT_SHARE_MSG2 = " points</strong>!<br><br>Share your score with your friends!"
 TEXT_SHARE_SHARE1 = "My score is ";
 TEXT_SHARE_SHARE2 = " points! Can you do better?";
 
-function CPreloader() {
+var pole0;
+    var pole2;
+    
+    function CPreloader() {
     var a, d, b, c, e, f, h, m, n, k;
     this._init = function() {
         s_oSpriteLibrary.init(this._onImagesLoaded, this._onAllImagesLoaded, this);
