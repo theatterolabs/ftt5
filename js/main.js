@@ -1949,10 +1949,12 @@ function CGame(a, d, b) {
         G = new CBatter(F, a);
         d = s_oSpriteLibrary.getSprite("pole_0");
         pole0 = createBitmap(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        c.addChild(pole0);
         
         d = s_oSpriteLibrary.getSprite("pole_2");
         
        pole2 = createBitmap(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        c.addChild(pole2);
         
         pole2.visible = false;
         pole2.alpha = 0;
