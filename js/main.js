@@ -1,3 +1,5 @@
+var pole0;
+var pole2; 
 (function() {
     function a(a) {
         a = String(a);
@@ -1904,8 +1906,7 @@ function CMenu() {
     this._init()
 }
 var s_oMenu = null;
-var pole0;
-var pole2;    
+   
 
 function CGame(a, d, b) {
     function c(a) {
@@ -1954,6 +1955,7 @@ function CGame(a, d, b) {
         pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         
         pole2.visible = false;
+        pole2.alpha = 0;
         
 
        
@@ -2047,7 +2049,9 @@ function CGame(a, d, b) {
             playSound("crowd_ohhh", 1, !1);
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
         pole0.visible = false;
+        pole0.alpha = 0;
         pole2.visible = true;
+        pole2.alpha = 1;
             r.setVisible(!1);
             y--;
             A.refreshLivesText(y)
