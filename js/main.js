@@ -1922,7 +1922,7 @@ function CGame(a, d, b) {
         w = !0,
         z = !1,
         E, A, M = null,
-        F, G, H, r;
+        F, G, H, pole0, pole2, r;
     this._init = function(a, b) {
         $(s_oMain).trigger("start_session");
         setVolume("soundtrack", .35);
@@ -1942,9 +1942,11 @@ function CGame(a, d, b) {
         this.ballResetPos();
         y = LIVES;
         G = new CBatter(F, a);
-        var d1 = createBitmap(s_oSpriteLibrary.getSprite("pole_0"));
-        var e1 = s_oStage.addChild(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d1);
-        
+        d = s_oSpriteLibrary.getSprite("pole_0");
+        pole0 = new CPole(CANVAS_WIDTH_HALF - 8, CANVAS_HEIGHT - 812, d, F);
+         d = s_oSpriteLibrary.getSprite("pole_2");
+        pole2 = new CPole(CANVAS_WIDTH_HALF - 8, CANVAS_HEIGHT - 812, d, F); 
+
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
         A.createHelpPanel()
