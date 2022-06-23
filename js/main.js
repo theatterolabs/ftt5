@@ -1948,13 +1948,13 @@ function CGame(a, d, b) {
         G = new CBatter(F, a);
         d = s_oSpriteLibrary.getSprite("pole_0");
         
-        pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        this.pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         
         d = s_oSpriteLibrary.getSprite("pole_2");
         
-        pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        this.pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         
-        pole2.setVisible(!1);
+        this.pole2.setVisible(!1);
         
 
        
@@ -2047,8 +2047,8 @@ function CGame(a, d, b) {
             l = !0;
             playSound("crowd_ohhh", 1, !1);
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
-        pole0.setVisible(!1);
-        pole2.setVisible(!0);
+        this.pole0.setVisible(!1);
+        this.pole2.setVisible(!0);
             r.setVisible(!1);
             y--;
             A.refreshLivesText(y)
