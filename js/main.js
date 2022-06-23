@@ -1220,8 +1220,7 @@ TEXT_SHARE_MSG2 = " points</strong>!<br><br>Share your score with your friends!"
 TEXT_SHARE_SHARE1 = "My score is ";
 TEXT_SHARE_SHARE2 = " points! Can you do better?";
 
-var pole0;
-    var pole2;
+
     
     function CPreloader() {
     var a, d, b, c, e, f, h, m, n, k;
@@ -1947,11 +1946,11 @@ function CGame(a, d, b) {
         G = new CBatter(F, a);
         d = s_oSpriteLibrary.getSprite("pole_0");
         
-        this.pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         
          d = s_oSpriteLibrary.getSprite("pole_2");
-        this.pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
-          this.pole2.visible = false;
+        new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        
 
        
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
@@ -2041,8 +2040,6 @@ function CGame(a, d, b) {
             x = !1;
             l = !0;
             playSound("crowd_ohhh", 1, !1);
-            this.pole2.visible = false;
-            this.pole0.visible = true;
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
             r.setVisible(!1);
             y--;
@@ -2052,8 +2049,6 @@ function CGame(a, d, b) {
         e = 0;
         p && s_oGame._strike();
         s_oGame.changeStateTarget(!1);
-        this.pole2.visible = true;
-            this.pole0.visible = false;
         x = !0;
         z = !1;
         A.setHitAreaVisible(!1)
