@@ -2059,6 +2059,8 @@ function CGame(a, d, b) {
         e = 0;
         p && s_oGame._strike();
         s_oGame.changeStateTarget(!1);
+         pole2.alpha = 0;
+            pole0.alpha = 1;
         x = !0;
         z = !1;
         A.setHitAreaVisible(!1)
