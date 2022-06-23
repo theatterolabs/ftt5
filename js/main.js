@@ -1942,10 +1942,12 @@ function CGame(a, d, b) {
         this.ballResetPos();
         y = LIVES;
         G = new CBatter(F, a);
+        
         d = s_oSpriteLibrary.getSprite("pole_0");
-        pole0 = new CPole(CANVAS_WIDTH_HALF - 8, CANVAS_HEIGHT - 812, d, F);
+        pole0 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        
          d = s_oSpriteLibrary.getSprite("pole_2");
-        pole2 = new CPole(CANVAS_WIDTH_HALF - 8, CANVAS_HEIGHT - 812, d, F); 
+        pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F); 
 
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
