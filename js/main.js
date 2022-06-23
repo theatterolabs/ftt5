@@ -1948,11 +1948,11 @@ function CGame(a, d, b) {
         y = LIVES;
         G = new CBatter(F, a);
         d = s_oSpriteLibrary.getSprite("pole_0");
-        pole0 = game.make.sprite(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        pole0 = createBitmap(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         
         d = s_oSpriteLibrary.getSprite("pole_2");
         
-       pole2 = game.make.sprite(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+       pole2 = createBitmap(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
         
         pole2.visible = false;
         pole2.alpha = 0;
