@@ -1953,8 +1953,8 @@ function CGame(a, d, b) {
         d = s_oSpriteLibrary.getSprite("pole_2");
         
         pole2 = new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
-        pole2.alpha = 0;
         
+        pole2.setVisible(!1);
         
 
        
@@ -1963,6 +1963,7 @@ function CGame(a, d, b) {
         A.createHelpPanel()
     };
     this.launchCountdown = function() {
+        pole2.setVisible(!1);
         var a = createBitmap(s_oSpriteLibrary.getSprite("3"));
         a.x = CANVAS_WIDTH / 2;
         a.y = CANVAS_HEIGHT / 2;
@@ -2046,8 +2047,8 @@ function CGame(a, d, b) {
             l = !0;
             playSound("crowd_ohhh", 1, !1);
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
-        pole0.alpha = 0;
-        pole2.alpha = 1;
+        pole0.setVisible(!1);
+        pole2.setVisible(!0);
             r.setVisible(!1);
             y--;
             A.refreshLivesText(y)
