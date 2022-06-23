@@ -1949,7 +1949,7 @@ function CGame(a, d, b) {
         pole0.y = CANVAS_HEIGHT - 193;
         pole0.regX = .5 * d.width;
         pole0.regY = .5 * d.height;
-        f.addChild(pole0);
+        F.addChild(pole0);
         
          d = s_oSpriteLibrary.getSprite("pole_2");
         pole2 = createBitmap(d);
@@ -1957,7 +1957,7 @@ function CGame(a, d, b) {
         pole2.y = CANVAS_HEIGHT - 193;
         pole2.regX = .5 * d.width;
         pole2.regY = .5 * d.height;
-        f.addChild(pole2);
+        F.addChild(pole2);
         pole2.alpha = 0;
         
 
