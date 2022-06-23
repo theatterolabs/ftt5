@@ -1904,6 +1904,8 @@ function CMenu() {
     this._init()
 }
 var s_oMenu = null;
+var pole0;
+var pole2;    
 
 function CGame(a, d, b) {
     function c(a) {
@@ -1923,8 +1925,6 @@ function CGame(a, d, b) {
         l = !1,
         w = !0,
         z = !1,
-        pole0,
-        pole2,
         E, A, M = null,
         F, G, H, r;
     this._init = function(a, b) {
@@ -1963,7 +1963,7 @@ function CGame(a, d, b) {
         A.createHelpPanel()
     };
     this.launchCountdown = function() {
-        pole2.setVisible(!1);
+        
         var a = createBitmap(s_oSpriteLibrary.getSprite("3"));
         a.x = CANVAS_WIDTH / 2;
         a.y = CANVAS_HEIGHT / 2;
