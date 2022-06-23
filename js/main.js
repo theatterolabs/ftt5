@@ -1440,6 +1440,7 @@ function CMain(a) {
         s_oSpriteLibrary.addSprite("but_continue", "./sprites/but_continue.png");
         s_oSpriteLibrary.addSprite("pole_0", "./sprites/pole_0.png");
         s_oSpriteLibrary.addSprite("pole_1", "./sprites/pole_1.png");
+        s_oSpriteLibrary.addSprite("pole_2", "./sprites/pole_2.png");
         s_oSpriteLibrary.addSprite("but_pause", "./sprites/but_pause.png");
         s_oSpriteLibrary.addSprite("but_yes", "./sprites/but_yes.png");
         s_oSpriteLibrary.addSprite("but_no", "./sprites/but_no.png");
@@ -1941,8 +1942,9 @@ function CGame(a, d, b) {
         this.ballResetPos();
         y = LIVES;
         G = new CBatter(F, a);
-        d = s_oSpriteLibrary.getSprite("pole_0");
-        new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        var d1 = s_oSpriteLibrary.getSprite("pole_0");
+        game.add.image(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d1);
+        
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
         A.createHelpPanel()
